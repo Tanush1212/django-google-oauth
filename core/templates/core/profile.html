@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Your profile · Google Login Demo{% endblock %}
+{% block content %}
+<section class="profile">
+  {% if picture %}
+    <img class="avatar" src="{{ picture }}" alt="" width="96" height="96" referrerpolicy="no-referrer">
+  {% endif %}
+  <h1>{{ name|default:"No name shared" }}</h1>
+  <dl>
+    <dt>Email</dt>
+    <dd>{{ email|default:"No email shared" }}</dd>
+    <dt>Signed in with</dt>
+    <dd>Google (OAuth 2.0, scopes: profile, email)</dd>
+  </dl>
+</section>
+{% endblock %}
